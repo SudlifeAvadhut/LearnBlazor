@@ -1,0 +1,120 @@
+﻿@page "/learnblazor/bindprop"
+
+<div class="row">
+    <div class="col-6 border p-3">
+        <h3 class="text-primary">Product Playground</h3>
+        <hr />
+        InActive Flag with Bind-Value : <input type="checkbox" @bind-value="product.IsActive" checked="@(product.IsActive ? "checked" : null)" /> <br />
+
+        InActive Flag with Bind : <input type="checkbox" @bind="product.IsActive" /> <br />
+
+        Input Price :- <input type="number" @bind="@product.price" @bind:event="oninput" /> <br />
+        Input Price :- <input type="number" @bind-value="@product.price" @bind-value:event="oninput" />
+
+        <br />
+        <br />
+        Product Properties
+        <select @bind="selectedPro">
+            @foreach (var prop in product.ProductProperties)
+            {
+                <option value="@prop.key">@prop.key</option>
+            }
+        </select>
+    </div>
+    <div class="col-6 border p-3">
+        <h3 class="text-primary">Product Summary</h3>
+        <hr />
+        ProductName :- @product.productName <br />
+        IsActive :- @product.IsActive <br />
+        Price :- @product.price <br />
+        The product is  : @(product.IsActive ? "Active" : "InActive") <br />
+
+
+        <br />
+        Selected Property : @selectedPro
+        @if (!string.IsNullOrEmpty(selectedPro))
+        {
+            <p>Selected Pro : @product.ProductProperties.FirstOrDefault(x => x.key == selectedPro).value</p>
+        }
+
+    </div>
+    <div class="col-12 p-4">
+        <h2 class="text-success">Product Table</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>Product Name</td>
+                    <td>Price</td>
+                    <td>Is Active</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in productList)
+                {
+                    <tr>
+                        <td><input type="text" @bind="item.productName" @bind:event="oninput" /></td>
+                        <td><input type="text" @bind="item.price" @bind:event="oninput" /></td>
+                        <td><input type="checkbox" @bind="item.IsActive" /></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <br /><br />
+    <h2>Product Summary</h2>
+    @foreach(var item in productList)
+    {
+        <p>@item.productName [@item.price] is @(item.IsActive ? "Active" : "InActive")</p>
+    }
+</div>
+
+
+@code {
+    private string selectedPro = "";
+    Product product = new()
+    {
+        productId = 1,
+        productName = "Product 1",
+        IsActive = true,
+        price = 100.00,
+        ProductProperties = new List<Product_Prop>
+        {
+            new Product_Prop{Id = 1 , key ="Color" , value = "Red"},
+            new Product_Prop{Id = 2 , key ="Size" , value = "20oz"},
+            new Product_Prop{Id = 3 , key ="Flavour" , value = "Rose"},
+        }
+    };
+
+    List<Product> productList = new();
+
+    protected override void OnInitialized()
+    {
+        productList.Add(new()
+            {
+                productId = 1,
+                productName = "Mindnight Blazor",
+                IsActive = false,
+                price = 5.99,
+                ProductProperties = new List<Product_Prop>
+                {
+                    new Product_Prop{Id = 1 , key ="Color" , value = "Purple"},
+                    new Product_Prop{Id = 2 , key ="Size" , value = "20oz"},
+                    new Product_Prop{Id = 3 , key ="Flavour" , value = "Rose"},
+                }
+            });
+
+        productList.Add(new()
+            {
+                productId = 1,
+                productName = "Blossom Lily",
+                IsActive = true,
+                price = 5.99,
+                ProductProperties = new List<Product_Prop>
+                {
+                    new Product_Prop{Id = 1 , key ="Color" , value = "White"},
+                    new Product_Prop{Id = 2 , key ="Size" , value = "18oz"},
+                    new Product_Prop{Id = 3 , key ="Flavour" , value = "Lily"},
+                }
+            });
+    }
+}

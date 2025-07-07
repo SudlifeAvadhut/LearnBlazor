@@ -1,0 +1,70 @@
+﻿@page "/learnblazor/demoproduct"
+
+<h2 class="text-success">DemoProduct</h2>
+<p>Favorite Count : @FavoriteCount</p>
+<p>Selected Product : @selectedProduct</p>
+
+<div class="p-2 mt-2">
+    <div class="row">
+        @foreach(var prod in productList)
+        {
+            <_IndividualProduct Product="@prod" OnFavoriteUpdate="FavoriteCountChange" OnSelectedProductChange="UpdatedSelectedProduct"></_IndividualProduct>
+        }
+    </div>
+</div>
+
+@code {
+
+    public int FavoriteCount { get; set; } = 0;
+    List<Product> productList = new();
+    public string selectedProduct { get; set; } = string.Empty;
+
+    protected override void OnInitialized()
+    {
+        productList.Add(new()
+            {
+                productId = 1,
+                productName = "Mindnight Blazor",
+                IsActive = false,
+                price = 5.99,
+                ProductProperties = new List<Product_Prop>
+                {
+                    new Product_Prop{Id = 1 , key ="Color" , value = "Purple"},
+                    new Product_Prop{Id = 2 , key ="Size" , value = "20oz"},
+                    new Product_Prop{Id = 3 , key ="Flavour" , value = "Rose"},
+                }
+            });
+
+        productList.Add(new()
+            {
+                productId = 2,
+                productName = "Blossom Lily",
+                IsActive = true,
+                price = 5.99,
+                ProductProperties = new List<Product_Prop>
+                {
+                    new Product_Prop{Id = 1 , key ="Color" , value = "White"},
+                    new Product_Prop{Id = 2 , key ="Size" , value = "18oz"},
+                    new Product_Prop{Id = 3 , key ="Flavour" , value = "Lily"},
+                }
+            });
+    }
+
+    protected void FavoriteCountChange(bool isSelected)
+    {
+        if(isSelected)
+        {
+            FavoriteCount++;
+        }
+        else
+        {
+            FavoriteCount--;
+        }
+    }
+
+    protected void UpdatedSelectedProduct(string productName)
+    {
+        selectedProduct = productName;
+    }
+}
+
