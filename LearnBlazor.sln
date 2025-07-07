@@ -5,6 +5,20 @@ VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearnBlazor", "LearnBlazor\LearnBlazor.csproj", "{71CF6424-B9E0-4E4A-986B-C6A202ADF853}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleBlazorSSR", "SampleBlazorSSR\SampleBlazorSSR.csproj", "{9A52DE80-7265-40E0-B602-7C8F45157C7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleAppServerGlobal", "SampleAppServerGlobal\SampleAppServerGlobal.csproj", "{9935338E-5B94-4DCE-A9E7-DC401AF45A41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleAppServerLocal", "SampleAppServerLocal\SampleAppServerLocal.csproj", "{164B831A-38BC-40E9-A1B2-C49C13E29260}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleAppWASMStandAlone", "SampleAppWASMStandAlone\SampleAppWASMStandAlone.csproj", "{D9FEA3C8-7F50-4CD4-9759-DC4A9B8A0894}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleAppAutoPerCompoent", "SampleAppAutoPerCompoent\SampleAppAutoPerCompoent\SampleAppAutoPerCompoent.csproj", "{05771D6F-DD21-41E1-8CAA-48CE7F6B0C1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleAppAutoPerCompoent.Client", "SampleAppAutoPerCompoent\SampleAppAutoPerCompoent.Client\SampleAppAutoPerCompoent.Client.csproj", "{5606C851-6AA5-46FF-8E2B-BBE78C508890}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YumBlazor", "YumBlazor\YumBlazor.csproj", "{7C7D13DE-D925-4AD3-B579-BD27D67B86CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +29,34 @@ Global
 		{71CF6424-B9E0-4E4A-986B-C6A202ADF853}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71CF6424-B9E0-4E4A-986B-C6A202ADF853}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71CF6424-B9E0-4E4A-986B-C6A202ADF853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A52DE80-7265-40E0-B602-7C8F45157C7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A52DE80-7265-40E0-B602-7C8F45157C7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A52DE80-7265-40E0-B602-7C8F45157C7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A52DE80-7265-40E0-B602-7C8F45157C7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9935338E-5B94-4DCE-A9E7-DC401AF45A41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9935338E-5B94-4DCE-A9E7-DC401AF45A41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9935338E-5B94-4DCE-A9E7-DC401AF45A41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9935338E-5B94-4DCE-A9E7-DC401AF45A41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{164B831A-38BC-40E9-A1B2-C49C13E29260}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{164B831A-38BC-40E9-A1B2-C49C13E29260}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{164B831A-38BC-40E9-A1B2-C49C13E29260}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{164B831A-38BC-40E9-A1B2-C49C13E29260}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9FEA3C8-7F50-4CD4-9759-DC4A9B8A0894}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9FEA3C8-7F50-4CD4-9759-DC4A9B8A0894}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9FEA3C8-7F50-4CD4-9759-DC4A9B8A0894}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9FEA3C8-7F50-4CD4-9759-DC4A9B8A0894}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05771D6F-DD21-41E1-8CAA-48CE7F6B0C1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05771D6F-DD21-41E1-8CAA-48CE7F6B0C1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05771D6F-DD21-41E1-8CAA-48CE7F6B0C1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05771D6F-DD21-41E1-8CAA-48CE7F6B0C1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5606C851-6AA5-46FF-8E2B-BBE78C508890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5606C851-6AA5-46FF-8E2B-BBE78C508890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5606C851-6AA5-46FF-8E2B-BBE78C508890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5606C851-6AA5-46FF-8E2B-BBE78C508890}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C7D13DE-D925-4AD3-B579-BD27D67B86CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C7D13DE-D925-4AD3-B579-BD27D67B86CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C7D13DE-D925-4AD3-B579-BD27D67B86CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C7D13DE-D925-4AD3-B579-BD27D67B86CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

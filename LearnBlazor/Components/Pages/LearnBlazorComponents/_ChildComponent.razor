@@ -1,4 +1,5 @@
-﻿<h3>_ChildComponent</h3>
+﻿@inject IJSRuntime JSRuntime
+
 <div>
     <div class="alert alert-info">
         @Title
@@ -37,4 +38,11 @@
 
     [Parameter]
     public string MessageForGrandChild { get; set; }
+
+    public void ToastrSuccess()
+    {
+      //  JSRuntime.InvokeVoidAsync("showToastr", "success", "Success Notification");
+
+        JSRuntime.ToastrSucess("Success Notification");
+    }
 }
